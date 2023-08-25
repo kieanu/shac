@@ -1,4 +1,4 @@
-package com.funch.shac.base
+package com.funch.shac.presentation.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

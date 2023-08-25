@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.funch.shac.databinding.FragmentHomeBinding
+import com.funch.shac.presentation.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel:HomeViewModel by viewModels()
+        val homeViewModel: HomeViewModel by viewModels()
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
