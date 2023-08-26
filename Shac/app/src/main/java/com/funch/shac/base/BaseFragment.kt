@@ -1,17 +1,42 @@
-package com.aqube.ram.base
+package com.funch.shac.base
 
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.funch.shac.base.BaseViewModel
+import com.funch.shac.ui.extension.dismissLoadingDialog
+import com.funch.shac.ui.extension.showLoadingDialog
+import com.funch.shac.ui.extension.showSnackBar
 
+private const val TAG = "BaseFragment"
 abstract class BaseFragment<VB : ViewBinding, ViewModel : BaseViewModel> : Fragment() {
 
     protected lateinit var binding: VB
     protected abstract val viewModel: ViewModel
+
+    companion object {
+        // BaseFragment를 상속받는 SubClass의 생성자를 받아서 instance에서 호출
+        // subInstance()를 구현하지 않으면 null이므로 이를 방지하기 위해 아예 에러를 띄우게 만듬(companion은 abstract 불가능)
+        fun subInstance(): BaseFragment<*, *> {
+            throw IllegalStateException("subInstance must be overridden in the subclass")
+        }
+        
+        fun <T : Parcelable> instance(list: List<T>, vararg argName: String): BaseFragment<*, *> {
+            val fragment = subInstance()
+            val args = Bundle()
+
+            for (i in argName.indices) {
+                args.putParcelableArrayList(argName[i], ArrayList(list))
+            }
+
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
     abstract fun getViewBinding(): VB
 
@@ -54,5 +79,15 @@ abstract class BaseFragment<VB : ViewBinding, ViewModel : BaseViewModel> : Fragm
                 handleErrorMessage(getString(R.string.unknown_error))
             })*/
         }
+    }
+    protected open fun handleLoading(isLoading: Boolean) {
+        if (isLoading) showLoadingDialog() else dismissLoadingDialog()
+    }
+
+    protected open fun handleErrorMessage(message: String?) {
+        if (message.isNullOrBlank()) return
+        dismissLoadingDialog()
+        Log.d(TAG, "handleErrorMessage")
+        showSnackBar(binding.root, message)
     }
 }

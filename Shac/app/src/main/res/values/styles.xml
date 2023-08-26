@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="UpperText">
+        <item name="android:fontFamily">@font/postnobillscolombo_extrabold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="ItemText">
+        <item name="android:fontFamily">@font/notosans_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

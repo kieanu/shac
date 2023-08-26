@@ -9,10 +9,13 @@ import java.util.concurrent.TimeUnit
 // RemoteModule에서 사용합니다.
 object ServiceFactory {
     // 각 서비스 별로 create 함수를 별도로 만든다.
-    fun create(isDebug: Boolean, baseUrl: String): NameService {
+    fun createUserService(isDebug: Boolean, baseUrl: String): UserService {
         val retrofit = createRetrofit(isDebug, baseUrl)
-        return retrofit.create(NameService::class.java)
+        return retrofit.create(UserService::class.java)
     }
+
+
+
 
     private fun createRetrofit(isDebug: Boolean, baseUrl: String): Retrofit {
         return Retrofit.Builder()

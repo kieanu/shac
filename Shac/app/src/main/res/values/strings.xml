@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Shac</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_campaign">Campaign</string>
+    <string name="app_exit_label">한번 더 뒤로가기를 누르면 종료됩니다.</string>
 </resources>

@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shac"
+        tools:replace="android:theme"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -23,6 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 도로명 주소 api 액티비티 -->
+        <activity
+            android:name="com.tlsolution.tlsaddresssearchhelper.AddressExampleActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

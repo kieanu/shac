@@ -14,14 +14,14 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.funch.shac.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="com.funch.shac.ui.donate.DonateFragment"
+        android:label="@string/title_donate"
         tools:layout="@layout/fragment_dashboard" >
     </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.funch.shac.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="com.funch.shac.ui.campaign.CampaignFragment"
+        android:label="@string/title_campaign"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
