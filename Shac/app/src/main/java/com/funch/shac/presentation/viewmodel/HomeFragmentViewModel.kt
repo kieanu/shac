@@ -3,7 +3,6 @@ package com.funch.shac.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.funch.shac.base.BaseViewModel
-import com.funch.shac.data.repository.UserRepository
 import com.funch.shac.presentation.utils.CoroutineContextProvider
 import com.funch.shac.presentation.utils.ExceptionHandler
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -11,7 +10,7 @@ import javax.inject.Inject
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class HomeFragmentViewModel @Inject constructor(
     contextProvider: CoroutineContextProvider,
     // private val userRepository: UserRepository // -> Module에 @provide로 impl return 하는 함수 있어야함
 ) : BaseViewModel(contextProvider) {

@@ -35,11 +35,15 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
         // showSnackBar(binding.root, "ㅎㅇ")
+        addBackCallback()
+    }
+
+    private fun addBackCallback() {
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (navController.graph.startDestinationId == navController.currentDestination?.id) {
                     if (backPressedOnce) {
-                        onBackPressedDispatcher.onBackPressed()
+                        exitApp()
                         return
                     }
 
@@ -51,9 +55,14 @@ class MainActivity : AppCompatActivity() {
                         backPressedOnce = false
                     }
                 } else {
-                    onBackPressedDispatcher.onBackPressed()
+                    //onBackPressedDispatcher.onBackPressed()
+                    navController.popBackStack(navController.graph.startDestinationId, false)
                 }
             }
         })
+    }
+
+    private fun exitApp() {
+        finish()
     }
 }

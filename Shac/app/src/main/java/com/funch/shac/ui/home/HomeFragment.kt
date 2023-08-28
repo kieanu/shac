@@ -5,40 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.funch.shac.base.BaseFragment
+import com.funch.shac.base.BaseViewModel
 import com.funch.shac.databinding.FragmentHomeBinding
-import com.funch.shac.presentation.viewmodel.HomeViewModel
+import com.funch.shac.presentation.viewmodel.HomeFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding, BaseViewModel>() {
+    override fun getViewBinding(): FragmentHomeBinding  = FragmentHomeBinding.inflate(layoutInflater)
 
-    private var _binding: FragmentHomeBinding? = null
+    override val viewModel: HomeFragmentViewModel by viewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+//    @Inject
+//    lateinit var userAdapter: UserAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel: HomeViewModel by viewModels()
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        super.onCreateView(inflater, container, savedInstanceState)
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        return root
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return binding.root
     }
 }

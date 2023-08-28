@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.funch.shac.databinding.FragmentNotificationsBinding
-import com.funch.shac.presentation.viewmodel.CampaignViewModel
+import com.funch.shac.presentation.viewmodel.CampaignFragmentViewModel
 
 class CampaignFragment : Fragment() {
 
@@ -23,14 +23,14 @@ class CampaignFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val campaignViewModel =
-            ViewModelProvider(this).get(CampaignViewModel::class.java)
+        val campaignFragmentViewModel =
+            ViewModelProvider(this).get(CampaignFragmentViewModel::class.java)
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications
-        campaignViewModel.text.observe(viewLifecycleOwner) {
+        campaignFragmentViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

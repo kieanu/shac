@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.funch.shac.databinding.FragmentDashboardBinding
-import com.funch.shac.presentation.viewmodel.DonateViewModel
+import com.funch.shac.presentation.viewmodel.DonateFragmentViewModel
 
 class DonateFragment : Fragment() {
 
@@ -23,14 +23,14 @@ class DonateFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val donateViewModel =
-            ViewModelProvider(this).get(DonateViewModel::class.java)
+        val donateFragmentViewModel =
+            ViewModelProvider(this).get(DonateFragmentViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        donateViewModel.text.observe(viewLifecycleOwner) {
+        donateFragmentViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
