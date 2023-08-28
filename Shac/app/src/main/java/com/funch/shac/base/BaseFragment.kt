@@ -18,7 +18,7 @@ abstract class BaseFragment<VB : ViewBinding, ViewModel : BaseViewModel> : Fragm
     protected lateinit var binding: VB
     protected abstract val viewModel: ViewModel
 
-    // fragment에서 쓰는 생성자 함수를 상속하고 싶었는데 쉽지않네.. 어떻게 방법 없나? 
+    // fragment에서 쓰는 생성자 함수를 상속하고 싶었는데 쉽지않네.. 어떻게 방법 없나?
 //    companion object {
 //        // BaseFragment를 상속받는 SubClass의 생성자를 받아서 instance에서 호출
 //        // subInstance()를 구현하지 않으면 null이므로 이를 방지하기 위해 아예 에러를 띄우게 만듬(companion은 abstract 불가능)

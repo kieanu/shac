@@ -28,7 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, BaseViewModel>() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        BaseFragment.subInstance()
         val textView: TextView = binding.textHome
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
