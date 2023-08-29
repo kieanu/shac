@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bottom_unfocused">#FF787878</color>
     <color name="bottom_focused">#FF2C67FF</color>
+    <color name="grey_text">#FFAAA6B9</color>
+    <color name="main_bg_color">#FFF9F9F9</color>
+    <color name="transparent">#27EEECEC</color>
 </resources>

@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Shac" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 기본 배경색 -->
+        <item name="android:windowBackground">@color/main_bg_color</item>
         <!-- Font -->
         <item name="android:fontFamily">@font/notosnas_regular</item>
         <!-- Primary brand color. -->
