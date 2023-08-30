@@ -4,7 +4,7 @@
         <!-- 기본 배경색 -->
         <item name="android:windowBackground">@color/main_bg_color</item>
         <!-- Font -->
-        <item name="android:fontFamily">@font/notosnas_regular</item>
+        <item name="android:fontFamily">@font/dmsans_regular</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

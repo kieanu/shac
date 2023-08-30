@@ -2,9 +2,9 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/background">
         <shape>
-            <corners android:radius="18dp" />
-            <solid android:color="@color/transparent" /> <!-- 백그라운드 컬러 -->
-            <stroke android:color="@color/bottom_focused" android:width="@dimen/_1sdp" /> <!-- 테두리 컬러-->
+            <corners android:radius="18dp"/>
+            <solid android:color="@color/transparent"/> <!-- 백그라운드 컬러 -->
+            <stroke android:color="@color/progress_filled" android:width="@dimen/_1sdp"/> <!-- 테두리 컬러-->
         </shape>
     </item>
 
@@ -13,7 +13,7 @@
     <scale android:scaleWidth="100%">
         <shape>
             <corners android:radius="@dimen/_30sdp" />
-            <solid android:color="@color/bottom_focused" />
+            <solid android:color="@color/progress_filled" />
         </shape>
     </scale>
     </item>

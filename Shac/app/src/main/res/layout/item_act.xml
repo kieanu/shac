@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:cardElevation="@dimen/_5sdp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
-    app:cardCornerRadius="@dimen/_15sdp">
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_5sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,19 +19,19 @@
             android:id="@+id/linearLayout_act_participant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginLeft="@dimen/_minus18sdp"
             android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
             app:layout_constraintStart_toEndOf="@+id/act_main_img_cardview"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/regularText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="@dimen/_12sdp"
                 android:textColor="@color/grey_text"
-                style="@style/regularText"
-                tools:text="2/5"/>
+                android:textSize="@dimen/_12sdp"
+                tools:text="2/5" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_16sdp"
@@ -45,9 +43,9 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/act_main_img_cardview"
-            android:layout_marginTop="@dimen/_8sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/_50sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,11 +60,11 @@
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_marginTop="@dimen/_6sdp"
             android:id="@+id/act_main_title"
             style="@style/boldText"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_6sdp"
             android:gravity="center"
             android:maxLines="2"
             android:textColor="@color/black"
@@ -77,16 +75,37 @@
 
         <ProgressBar
             android:id="@+id/act_fund_progress"
-            android:layout_marginTop="@dimen/_6sdp"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:progressDrawable="@drawable/curved_progress_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_20sdp"
-            android:progress="30"
-            app:layout_constraintTop_toBottomOf="@+id/act_main_title"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:progress="40"
+            android:progressDrawable="@drawable/curved_progress_bar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/act_main_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/act_fund_progress_percent_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/act_fund_progress"
+            app:layout_constraintTop_toBottomOf="@+id/act_fund_progress"
+            tools:text="10%" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/act_fund_progress_money_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/act_fund_progress"
+            app:layout_constraintTop_toBottomOf="@+id/act_fund_progress"
+            tools:text="100,000,000원" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
